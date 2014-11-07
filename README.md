@@ -1,4 +1,4 @@
-You are a survior of zombie apocalypse. You are moving from town-to-town collecting the most valuable items necessary for survival. You have backpack that can only hold a certain amount of weight and it is your job is to choose the best set of items based on their weight and value.
+You are a survior of zombie apocalypse. You are moving from town-to-town collecting the most valuable items necessary for survival. You have a backpack that can only hold a certain amount of weight and it is your job is to choose the best set of items based on their weight and value.
 
 **Write a API in [Grape](https://github.com/intridea/grape) with an API endpoint called** <code>/v1/survival-pack</code>.
 
@@ -6,27 +6,27 @@ That API endpoint will be given the following data via a <code>POST</code> reque
 
 * a set of survival items with a name and unique weight and value combination
 * an overall weight restriction
-* The endpoint can accept either a text file _OR_ a JSON data structure
+* The endpoint should accept a JSON data structure as input
 
-It will produce an optimal set of survival items which:
+It will (maybe asynchronously) produce an optimal set of survival items which:
 
 * are within the total weight restriction
-* maximize your chance of survival
-* The response will always be in JSON
+* maximizes your chance of survival
+* is in JSON
 
 Requirements:
 
-* use bundler - https://github.com/bundler/bundler
-* include multiple high-level test cases to validate your solution (like the one included below)
-* provide instructions in a README for submitting a survival pack to the API
-* deploy it to [Heroku](https://id.heroku.com/login) or similar service
-* The code must be readily available on GitHub or similar service
+* Use Rails
+* Use Grape - https://github.com/intridea/grape
+* Use Bundler - https://github.com/bundler/bundler
+* Include multiple system test cases to validate your solution (like the one included below adapted to a JSON API format)
+* Provide instructions in a README for submitting a survival pack to the API and interpretting the results
+* Deploy it to [Heroku](https://heroku.com) or similar service
+* Make your solution available on GitHub or similar service
 
 Input:
 
     max weight: 400
-
-    available survival items:
 
     name    weight value
     ammo        9   150
@@ -54,8 +54,6 @@ Input:
 
 Result:
 
-    best value:
-
     name    weight value
     beans       4    50
     popcorn     7    20
@@ -72,5 +70,9 @@ Result:
 
 Hint:
 
-* read this - http://en.wikipedia.org/wiki/Knapsack_problem
+* Read this - http://en.wikipedia.org/wiki/Knapsack_problem
+
+Extra Credit:
+
+* Create a tested JS frontend to manually exercise your solution using Knockout or Angular
 
